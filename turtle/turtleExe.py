@@ -43,11 +43,7 @@ while i <= j:
         f.write("정지포인트 : "+str(td.stopPoint(enterP,N,riskPer))+"\n") #정지포인트
         f.write("다음포인트 : "+str(nextP)+"\n")
         Limit=td.accountLimit(account,td.riskLimit) #한도
-<<<<<<< HEAD
         f.write("거래한도 : "+str(Limit)+"\n") 
-=======
-        #f.write("거래한도 : "+str(Limit)+"\n") 
->>>>>>> 4aa49b54db65f004029a0f2635830837331ad1df
         f.write("거래량 : "+str(td.contractAmount(Limit,N))+"\n") #거래량
         #f.write("계정금액 : "+str(td.changeAccount(account,N,i))+"\n") #계정금액
         f.write("\n")
