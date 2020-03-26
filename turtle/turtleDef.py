@@ -22,7 +22,7 @@ def accountLimit(account,riskLimit):
     return accountLimit
 #첫진입포인트
 def firstPoint():
-    enterPoint=float(input('첫진입포인트: '))
+    enterPoint=int(input('첫진입포인트: '))
     return enterPoint
 #다음거래포인트
 def nextPoint(enterPoint,N,riskPer):
@@ -30,8 +30,8 @@ def nextPoint(enterPoint,N,riskPer):
     print("다음거래포인트:",newEnterPoint)
     return newEnterPoint 
 #거래량
-def contractAmount(Limit,N,riskPer):
-    contract=Limit//(N*riskPer)
+def contractAmount(Limit,N):
+    contract=Limit//N
     print("거래량:",contract)
     return contract
 #거래정지포인트
@@ -54,3 +54,7 @@ def date(today):
         date=input("날짜 입력 : ")
         return date
         
+def price(enterPoint,amount):
+    price=enterPoint*amount
+    print("구매가격 : ",price)
+    return price
