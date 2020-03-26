@@ -7,8 +7,7 @@ import turtleDef as td
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'euc-kr')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'euc-kr')
 
-#savePath="D:/Data/Investment/turtle/"
-savePath="D:/Documents/Python/turtle/code/"
+savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
 
 try:
     if not(os.path.isdir(savePath)):
@@ -39,12 +38,16 @@ while i <= j:
         f.write("%s회차"% i+"\n")
         f.write("진입포인트 : "+str(enterP)+"\n")
         f.write("ATR : "+str(N)+"\n")
+        f.write("\n")
         nextP=td.nextPoint(enterP,N,riskPer)
         f.write("정지포인트 : "+str(td.stopPoint(enterP,N,riskPer))+"\n") #정지포인트
         f.write("다음포인트 : "+str(nextP)+"\n")
+        f.write("\n")
         Limit=td.accountLimit(account,td.riskLimit) #한도
-        f.write("거래한도 : "+str(Limit)+"\n") 
-        f.write("거래량 : "+str(td.contractAmount(Limit,N))+"\n") #거래량
+        f.write("거래한도 : "+str(Limit)+"\n")
+        amount=(td.contractAmount(Limit,N)) #거래량
+        f.write("거래량 : "+str(amount)+"\n") 
         #f.write("계정금액 : "+str(td.changeAccount(account,N,i))+"\n") #계정금액
+        f.write("구매금액 : "+str(td.price(enterP,amount))+"\n")
         f.write("\n")
     i+=1
