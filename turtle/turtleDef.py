@@ -30,8 +30,8 @@ def nextPoint(enterPoint,N,riskPer):
     print("다음거래포인트:",newEnterPoint)
     return newEnterPoint 
 #거래량
-def contractAmount(Limit,N,riskPer):
-    contract=Limit//(N*riskPer)
+def contractAmount(Limit,N):
+    contract=Limit//N
     print("거래량:",contract)
     return contract
 #거래정지포인트
