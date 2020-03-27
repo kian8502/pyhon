@@ -7,8 +7,8 @@ import turtleDef as td
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'euc-kr')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'euc-kr')
 
-#savePath="D:/Data/Investment/turtle/"
-savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
+savePath="D:/Documents/Python/turtle/code/"
+#savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
 
 try:
     if not(os.path.isdir(savePath)):
@@ -25,10 +25,11 @@ stockName=td.stockName()
 
 i=1
 #반복횟수
-j=int(input("반복횟수: "))
+#j=int(input("반복횟수: "))
+j=1
 while i <= j:
     account=td.entireaccount()
-    print("%s회차"% i)
+    #print("%s회차"% i)
     enterP=td.firstPoint()
     N=float(input("N: "))
 
@@ -36,7 +37,7 @@ while i <= j:
         now=td.date(input("오늘자 입력 1 or else :"))
         riskPer=float(input("리스크 비율 : "))
         f.write("입력일 : "+str(now)+"\n")
-        f.write("%s회차"% i+"\n")
+        #f.write("%s회차"% i+"\n")
         f.write("진입포인트 : "+str(enterP)+"\n")
         f.write("ATR : "+str(N)+"\n")
         nextP=td.nextPoint(enterP,N,riskPer)
