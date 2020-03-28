@@ -15,10 +15,10 @@ def entireaccount():
     #account=int(input("시작금액: "))
     account=int(input("계정보유금 : "))
     return account
-#계정한도
+#손실한도
 def accountLimit(account,riskLimit):
     accountLimit=account*riskLimit
-    print("계정한도 금:", accountLimit)
+    print("손실한정 금:", accountLimit)
     return accountLimit
 #첫진입포인트
 def firstPoint():

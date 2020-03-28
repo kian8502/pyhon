@@ -7,8 +7,8 @@ import turtleDef as td
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'euc-kr')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'euc-kr')
 
-savePath="D:/Documents/Python/turtle/code/"
-#savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
+#savePath="D:/Documents/Python/turtle/code/"
+savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
 
 try:
     if not(os.path.isdir(savePath)):
@@ -46,7 +46,7 @@ while i <= j:
         f.write("다음포인트 : "+str(nextP)+"\n")
         f.write("\n")
         Limit=td.accountLimit(account,td.riskLimit) #한도
-        f.write("거래한도 : "+str(Limit)+"\n")
+        f.write("손실한정 : "+str(Limit)+"\n")
         amount=(td.contractAmount(Limit,N)) #거래량
         f.write("거래량 : "+str(amount)+"\n") 
         #f.write("계정금액 : "+str(td.changeAccount(account,N,i))+"\n") #계정금액
