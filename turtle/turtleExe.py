@@ -3,7 +3,7 @@ import os
 import sys
 import io
 import turtleDef as td
-import traderecord as tr
+#import traderecord as tr
 
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'euc-kr')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'euc-kr')
@@ -56,10 +56,9 @@ def turtle(stockName):
         i+=1
 
 
+call = input("1 = turtle, 2 = record : ")
 
-call = input("1 = turtle, 2 = record")
-
-if call = "1":
-    turtle()
-if call = "2":
+if call == "1":
+    turtle(stockName)
+if call == "2":
     record()
