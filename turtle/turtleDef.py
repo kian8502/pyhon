@@ -5,7 +5,6 @@ from datetime import datetime
 
 
 #price=float(input("Price: "))
-riskLimit=0.02
 #종목명지정
 def stockName():
     stockName=input("종목명: ")
@@ -16,8 +15,8 @@ def entireaccount():
     account=int(input("계정보유금 : "))
     return account
 #계정한도
-def accountLimit(account,riskLimit):
-    accountLimit=account*riskLimit
+def accountLimit(account,riskPer):
+    accountLimit=account*riskPer
     print("계정한도 금:", accountLimit)
     return accountLimit
 #첫진입포인트
@@ -25,8 +24,8 @@ def firstPoint():
     enterPoint=int(input('첫진입포인트: '))
     return enterPoint
 #다음거래포인트
-def nextPoint(enterPoint,N,riskPer):
-    newEnterPoint=enterPoint+(riskPer*N)
+def nextPoint(enterPoint,N):
+    newEnterPoint=enterPoint+(N*0.5)
     print("다음거래포인트:",newEnterPoint)
     return newEnterPoint 
 #거래량
@@ -35,8 +34,8 @@ def contractAmount(Limit,N):
     print("거래량:",contract)
     return contract
 #거래정지포인트
-def stopPoint(enterPoint,N,riskPer):
-    stopPoint=enterPoint-(riskPer*N)
+def stopPoint(enterPoint,N):
+    stopPoint=enterPoint-(N*0.5)
     print("거래정지포인트:",stopPoint)
     return stopPoint 
 #계정변동
@@ -51,7 +50,7 @@ def date(today):
         print("입력일 : ",date)
         return date
     else:
-        date=input("날짜 입력 : ")
+        date=today
         return date
         
 def price(enterPoint,amount):

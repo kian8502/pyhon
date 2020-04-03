@@ -3,8 +3,8 @@ import sys
 import io
 from datetime import datetime
 
-# sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'euc-kr')
-# sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'euc-kr')
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'euc-kr')
+sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'euc-kr')
 
 """ 
 investType={1:"Buy",2:"Sell"}
@@ -73,8 +73,10 @@ def record(stockName):
     stockInfo=[]
     with open(savePath+"%s.txt"% stockName, "r", encoding="utf-8") as f:
         lines=f.readlines()
-        for stockInfo in lines:
-            print(stockInfo)
+        for i in lines:
+            stockInfo.append(i)
+    
+    print(stockInfo[1])
         
 
     # buyorsell = input("1 = buy, 2 = sell")
