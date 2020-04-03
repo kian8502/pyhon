@@ -35,7 +35,7 @@ def turtle(stockName):
         enterP=td.firstPoint()
         N=float(input("N: "))
 
-        with open(savePath+"%s.txt"% stockName, 'a') as f:
+        with open(savePath+"%s.txt"% stockName, 'a', encoding="utf-8") as f:
             now=td.date(input("오늘자 입력 1 or else :"))
             #riskPer=float(input("리스크 비율 : "))
             riskPer=0.01
