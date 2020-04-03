@@ -23,8 +23,8 @@ def firstPoint():
     enterPoint=int(input('첫진입포인트: '))
     return enterPoint
 #다음거래포인트
-def nextPoint(enterPoint,N):
-    newEnterPoint=enterPoint+N
+def nextPoint(enterPoint,N,pramiding):
+    newEnterPoint=enterPoint+(N*pramiding)
     print("다음거래포인트:",newEnterPoint)
     return newEnterPoint 
 #거래량
@@ -33,8 +33,8 @@ def contractAmount(Limit,N):
     print("거래량:",contract)
     return contract
 #거래정지포인트
-def stopPoint(enterPoint,N):
-    stopPoint=enterPoint-N
+def stopPoint(enterPoint,N,pramiding):
+    stopPoint=enterPoint-(N*pramiding)
     print("거래정지포인트:",stopPoint)
     return stopPoint 
 #계정변동
@@ -42,16 +42,15 @@ def changeAccount(account,N,i):
     account=account+(N*i)    
     print("계정금액:",account)
     return account 
-
+#일자입력
 def date(today):
     if today=='1':
         date=datetime.now()
         print("입력일 : ",date)
         return date
     else:
-        date=input("날짜 입력 : ")
-        return date
-        
+        return today
+#구매가        
 def price(enterPoint,amount):
     price=enterPoint*amount
     print("구매가격 : ",price)
