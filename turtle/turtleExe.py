@@ -8,6 +8,7 @@ import turtleDef as td
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'euc-kr')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'euc-kr')
 
+
 #savePath="D:/Documents/Python/turtle/code/"
 savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
 
