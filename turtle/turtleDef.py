@@ -7,6 +7,7 @@ from datetime import datetime
 #종목명지정
 def stockName():
     stockName=input("종목명: ")
+    #name=stockName.encode('utf-8')
     return stockName
 #계정시작금액
 def entireaccount():
@@ -22,21 +23,14 @@ def accountLimit(account,riskPer):
 def firstPoint():
     enterPoint=int(input('첫진입포인트: '))
     return enterPoint
-#다음거래포인트
-def nextPoint(enterPoint,N,pramiding):
-    newEnterPoint=enterPoint+(N*pramiding)
-    print("다음거래포인트:",newEnterPoint)
-    return newEnterPoint 
+
 #거래량
 def contractAmount(Limit,N):
     contract=Limit//N
     print("거래량:",contract)
     return contract
-#거래정지포인트
-def stopPoint(enterPoint,N,pramiding):
-    stopPoint=enterPoint-(N*pramiding)
-    print("거래정지포인트:",stopPoint)
-    return stopPoint 
+
+
 #계정변동
 def changeAccount(account,N,i):
     account=account+(N*i)    
@@ -55,3 +49,19 @@ def price(enterPoint,amount):
     price=enterPoint*amount
     print("구매가격 : ",price)
     return price
+
+#거래정지포인트
+def stopPoint(enterPoint,N):
+    stopPoint=enterPoint-(N*2)
+    print("거래정지포인트:",stopPoint)
+    return stopPoint 
+#다음거래포인트
+def nextPoint(enterPoint,N,pramiding):
+    newEnterPoint=enterPoint+(N*pramiding)
+    print("다음거래포인트:",newEnterPoint)
+    return newEnterPoint
+#Trail 포인트
+def trailPoint(enterPoint,N):
+    trailP=enterPoint+(N*0.5)
+    print("Trail포인트:",trailP)
+    return trailP 
