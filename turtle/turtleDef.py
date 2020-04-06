@@ -19,9 +19,9 @@ def accountLimit(account,riskPer):
     accountLimit=account*riskPer
     print("손실한정 금:", accountLimit)
     return accountLimit
-#첫진입포인트
+#진입포인트
 def firstPoint():
-    enterPoint=int(input('첫진입포인트: '))
+    enterPoint=int(input('진입포인트: '))
     return enterPoint
 
 #거래량
@@ -29,7 +29,6 @@ def contractAmount(Limit,N):
     contract=Limit//N
     print("거래량:",contract)
     return contract
-
 
 #계정변동
 def changeAccount(account,N,i):
