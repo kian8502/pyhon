@@ -21,16 +21,14 @@ except OSError as e:
         raise
 
 stockName=td.stockName()
-#Limit=td.accountLimit(account,td.riskLimit)
-#account=td.entireaccount() #보유계정금
 account=1000000
-enterP=td.firstPoint() #첫진입 포인트
 N=float(input("N: "))
 riskPer=0.01
 now=td.date(input("오늘자 입력 1 or else :"))
 #기초정보
 def info(stockName):
     with open(savePath+"%s.txt"% stockName, 'a', encoding="utf-8") as f:
+        enterP=td.firstPoint() #첫진입 포인트
         pramiding=float(input("피라미딩 포인트 0.5 or 1 : "))
         f.write("입력일 : "+str(now)+"\n")
         #f.write("%s회차"% i+"\n")
