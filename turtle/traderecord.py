@@ -73,17 +73,16 @@ def record(stockName):
     with open(savePath+"%s.txt"% stockName, "r", encoding="utf-8") as f:
         stockInfo=[]
         lines=f.readlines()
-        for i in lines:
-            stockInfo.append(i.strip().split('\t'))
+        for line in lines:
+            stockInfo.append(line.strip().split('\t'))
                 
     print(stockInfo)
-    with open(savePath+"New%s.txt"% stockName, "w", encoding="utf-8") as f:    
-        search=input("search code : ") # code 분류로 검색 하여 저장
-        for i in stockInfo:
-            print(i[1])
-            if i[1] == search:
-                f.write(str(i)+"\n")
-
+    search=input("search code : ") # code 분류로 검색 하여 저장
+    with open(savePath+"%s.txt"% search, "w", encoding="utf-8") as f:            
+        for line in stockInfo:            
+            if line[1] == search:
+                f.write(str(line)+"\n")
+                print(line)
        
 
     # buyorsell = input("1 = buy, 2 = sell")
@@ -94,7 +93,7 @@ def record(stockName):
     #     sellInfo=selling(buyInfo)
 
 
-record("test")
+record("buy")
 
 #winandloss=0
 
