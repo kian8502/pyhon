@@ -21,7 +21,7 @@ except OSError as e:
         raise
 
 stockName=td.stockName()
-account=1000000
+account=1200000
 N=float(input("N: "))
 riskPer=0.01
 now=td.date(input("오늘자 입력 1 or else :"))

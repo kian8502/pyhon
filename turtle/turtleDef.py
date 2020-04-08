@@ -39,8 +39,9 @@ def changeAccount(account,N,i):
 def date(today):
     if today=='1':
         date=datetime.now()
-        print("입력일 : ",date)
-        return date
+        print("입력일 : ",date.strftime('%Y-%m-%d'))
+        today=date.strftime('%Y-%m-%d')
+        return today
     else:
         return today
 #구매가        
