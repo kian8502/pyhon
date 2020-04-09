@@ -4,8 +4,8 @@ import io
 from datetime import datetime
 import turtleDef as td
 
-sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'euc-kr')
-sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'euc-kr')
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
 savePath="D:/Documents/Python/turtle/code/"
 #investType={1:"Buy",2:"Sell"}
@@ -58,11 +58,14 @@ def view(stockName):
             stockInfo.append(line.strip().split('\t'))               
     print(stockInfo)
     search=input("search code : ") # code 분류로 검색 하여 저장
+    i = 0
     with open(savePath+"%s.txt"% search, "w", encoding="utf-8") as f:            
-        for line in stockInfo:            
-            if line[1] == search:
-                f.write(str(line)+"\n")
-                print(line)
+        for line in stockInfo:
+            print(line[i])
+            i = i + 1
+            #if line[1] == search:
+                #f.write(str(line)+"\n")
+
        
 def buyRecord(stockCode):
     stockInfo=[]
@@ -83,8 +86,8 @@ def buyRecord(stockCode):
     
     with open(savePath+"buy.txt", "a", encoding="utf-8") as f:        
         f.write(str(stockInfo))
-        print(stockInfo)
         f.write("\n")
+        print(stockInfo)
             
 
     # buyorsell = input("1 = buy, 2 = sell")
@@ -93,5 +96,5 @@ def buyRecord(stockCode):
     #     buyInfo=buying()
     # if buyorsell == "2":
     #     sellInfo=selling(buyInfo)
-buyRecord(input("Stock Code : "))
+#buyRecord(input("Stock Code : "))
 view("buy")

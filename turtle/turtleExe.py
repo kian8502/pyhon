@@ -1,12 +1,12 @@
-#-*- coding:utf-8 -*-
+#-*- coding: utf-8 -*-
 import os
 import sys
 import io
 import turtleDef as td
 #import traderecord as tr
 
-sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'euc-kr')
-sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'euc-kr')
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
 
 savePath="D:/Documents/Python/turtle/code/"
@@ -21,7 +21,7 @@ except OSError as e:
         raise
 
 stockName=td.stockName()
-account=1200000
+account=1500000
 N=float(input("N: "))
 riskPer=0.01
 now=td.date(input("오늘자 입력 1 or else :"))
@@ -47,6 +47,7 @@ def info(stockName):
 def tradePoint(stockName):
     with open(savePath+"%s.txt"% stockName, 'a', encoding="utf-8") as f:
         lastP=float(input("직전 Drop포인트 : "))
+        f.write("Pramiding포인트 : " + str(td.nextPoint(lastP, N, 1)) + "\n")  # 추가포인트
         trail=td.trailPoint(lastP,N)
         f.write("Trail포인트 : "+str(trail)+"\n") #트레일포인트        
         f.write("\n")
