@@ -19,18 +19,15 @@ def accountLimit(account,riskPer):
     accountLimit=account*riskPer
     print("손실한정 금:", accountLimit)
     return accountLimit
-#첫진입포인트
+#진입포인트
 def firstPoint():
-    enterPoint=int(input('첫진입포인트: '))
+    enterPoint=int(input('진입포인트: '))
     return enterPoint
-
 #거래량
 def contractAmount(Limit,N):
     contract=Limit//N
     print("거래량:",contract)
     return contract
-
-
 #계정변동
 def changeAccount(account,N,i):
     account=account+(N*i)    
@@ -40,8 +37,9 @@ def changeAccount(account,N,i):
 def date(today):
     if today=='1':
         date=datetime.now()
-        print("입력일 : ",date)
-        return date
+        print("입력일 : ",date.strftime('%Y-%m-%d'))
+        today=date.strftime('%Y-%m-%d')
+        return today
     else:
         return today
 #구매가        
