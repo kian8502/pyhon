@@ -3,12 +3,11 @@ import os
 import sys
 import io
 import turtleDef as td
+import  averageCount as ac
 #import traderecord as tr
 
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
-
-
 
 #savePath="D:/Documents/Python/turtle/code/"
 savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
@@ -29,8 +28,9 @@ riskPer=0.01
 #기초정보
 def info(stockName):
     now = td.date(input("오늘자 입력 1 or else :"))
+    enterP = td.firstPoint()  # 첫진입 포인트
+    position=ac.position(enterP)
     with open(savePath+"%s.txt"% stockName, 'a', encoding="utf-8") as f:
-        enterP=td.firstPoint() #첫진입 포인트
         pramiding=float(input("피라미딩 포인트 0.5 or 1 : "))
         f.write("입력일 : "+str(now)+"\n")
         #f.write("%s회차"% i+"\n")
