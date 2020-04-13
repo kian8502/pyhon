@@ -21,7 +21,6 @@ except OSError as e:
         raise
 
 stockName=td.stockName()
-
 account=1500000
 N=float(input("N: "))
 riskPer=0.01
@@ -60,11 +59,3 @@ if call == "1":
     info(stockName)
 if call == "2":
     tradePoint(stockName)
-
-""" call = input("1 = turtle, 2 = record : ")
-
-if call == "1":
-    turtle(stockName)
-if call == "2":
-    record(stockName)
- """
