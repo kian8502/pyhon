@@ -9,8 +9,9 @@ sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
 
-savePath="D:/Documents/Python/turtle/code/"
-#savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
+
+#savePath="D:/Documents/Python/turtle/code/"
+savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
 
 try:
     if not(os.path.isdir(savePath)):
@@ -49,7 +50,7 @@ def tradePoint(stockName):
         lastP=float(input("직전 Drop포인트 : "))
         f.write("Pramiding포인트 : " + str(td.nextPoint(lastP, N, 1)) + "\n")  # 추가포인트
         trail=td.trailPoint(lastP,N)
-        f.write("Trail포인트 : "+str(trail)+"\n") #트레일포인트        
+        f.write("Trail포인트 : "+str(trail)+"\n") #트레일포인트
         f.write("\n")
 
 #turtle(stockName)
