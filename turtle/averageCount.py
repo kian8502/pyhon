@@ -4,8 +4,8 @@ import sys
 import io
 import turtleDef as td
 
-#savePath="D:/Documents/Python/turtle/code/"
-savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
+savePath="D:/Documents/Python/turtle/code/"
+#savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
 
 try:
     if not(os.path.isdir(savePath)):

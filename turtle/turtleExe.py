@@ -9,8 +9,8 @@ import  averageCount as ac
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
-#savePath="D:/Documents/Python/turtle/code/"
-savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
+savePath="D:/Documents/Python/turtle/code/"
+#savePath="C:/Users/animo/OneDrive/문서/python/turtle/code/"
 
 try:
     if not(os.path.isdir(savePath)):
